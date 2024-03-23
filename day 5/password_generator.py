@@ -44,13 +44,11 @@ for i in range(0, nr_numbers):
 # Shuffle the password
 safe_password = random.sample(password, len(password))     
 
-
 # Print the new password   
 print(f"Your new password is: ", end="")
 
 # Create new password   
 for i in safe_password:
-
 	print(i, end="")
 
 
