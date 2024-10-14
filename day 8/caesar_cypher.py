@@ -45,11 +45,6 @@ def decrypt(original_text, shift_amount):
 		# change the position in alphabet
 		new_position = position - shift_amount
 
-		# print(new_position)
-
-		# Check if new position is above 26
-	# 	new_position %= len(alphabet)
-
 		# assign new character to empty string
 		encrypted_word += alphabet[new_position]
 
