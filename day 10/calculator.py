@@ -20,33 +20,30 @@ logo = r"""
 # Create functions for add, subtract, divide, multiply
 
 def add(number1, number2):
+	return number1 + number2
 
 
 
 def subtract(number1, number2):
+	return number1 - number2
 
 
 
-def divide(number1, number2number1, number2):
+def divide(number1, number2):
+	return number1 / number2
 
 
 
 def multiply(number1, number2):
+	return number1 * number2
 
-
-# Add these 4 functions into a dictionary as the values. Keys = "+", "-", "*", "/"
-
-calculator = {
-	"+": add(),
-	"-": subtract(),
-	"*": multiply(),
-	"/": divide(),
-}
-
-# Use the dictionary operations to perform the calculations. Multiply 4 * 8 using the dictionary.
 
 
 def calculator():
+
+
+	# Create check variable for new calculations
+	is_new_calculations = True
 
 	# Start with welcome screen
 	print(logo)
@@ -54,17 +51,38 @@ def calculator():
 	# Ask for first number
 	first_number = int(input("What's the first number?:"))
 
-	# Ask for operation
-	print("+\n-\n*\n/\n")
-	input("Pick an operation:")
+	# Loop the questions if check is true
+	while is_new_calculations == True:
 
-	# Ask for second number
-	second_number = int(input("What's the next number?:"))
+		# Ask for operation
+		print("+\n-\n*\n/\n")
+		operation = input("Pick an operation:")
 
-	# Output calculation
+		# Ask for second number
+		second_number = int(input("What's the next number?:"))
 
-	# Ask for more calculations
-	input(f"Type 'y' to continue calculating with {result}, or type 'n' to start a new calculation: ")
+		# Calculate the numbers
+		# Add these 4 functions into a dictionary as the values. Keys = "+", "-", "*", "/"
+		calculator = {
+			"+": add(first_number, second_number),
+			"-": subtract(first_number, second_number),
+			"*": multiply(first_number, second_number),
+			"/": divide(first_number, second_number),
+		}
+
+		# Output calculation
+		result = calculator[operation]
+
+		# Ask for more calculations
+		new_calculation = input(f"Type 'y' to continue calculating with {result}, or type 'n' to start a new calculation: ")
+		if new_calculation == "n":
+			is_new_calculations = False
+		elif new_calculation == "y":
+			is_new_calculations = True
+			first_number = result
+		else :
+			is_new_calculations = False
 
 
 
+calculator()
