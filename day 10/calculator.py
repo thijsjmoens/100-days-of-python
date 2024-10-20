@@ -34,7 +34,7 @@ def divide(number1, number2number1, number2):
 def multiply(number1, number2):
 
 
-# TODO: Add these 4 functions into a dictionary as the values. Keys = "+", "-", "*", "/"
+# Add these 4 functions into a dictionary as the values. Keys = "+", "-", "*", "/"
 
 calculator = {
 	"+": add(),
@@ -42,5 +42,29 @@ calculator = {
 	"*": multiply(),
 	"/": divide(),
 }
+
+# Use the dictionary operations to perform the calculations. Multiply 4 * 8 using the dictionary.
+
+
+def calculator():
+
+	# Start with welcome screen
+	print(logo)
+
+	# Ask for first number
+	first_number = int(input("What's the first number?:"))
+
+	# Ask for operation
+	print("+\n-\n*\n/\n")
+	input("Pick an operation:")
+
+	# Ask for second number
+	second_number = int(input("What's the next number?:"))
+
+	# Output calculation
+
+	# Ask for more calculations
+	input(f"Type 'y' to continue calculating with {result}, or type 'n' to start a new calculation: ")
+
 
 

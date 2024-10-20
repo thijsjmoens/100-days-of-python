@@ -32,7 +32,7 @@ def is_leap_year(year):
 
 
 	# Return check
-	print( check_leap_year)
+	return check_leap_year
 
 
 # Call the function
