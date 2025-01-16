@@ -20,6 +20,9 @@ __status__ = "Production"
 # Variable that counts the attempts
 count_attempts = ''
 
+# Empty variable for guess
+guess = 0
+
 # Variable for number to guess
 number_to_guess = random.choice(range(1, 100))
 
@@ -39,15 +42,34 @@ difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ")
 # Show the rules for each difficulty
 if difficulty == 'easy':
     count_attempts = 10
+    
+elif difficulty == 'hard':
+    count_attempts = 5
+    
+else:
+    exit()
+    
+while int(guess) != number_to_guess: 
+    
+    # Check if there are no more attempts
+    if count_attempts == 0:
+        print(f"You've run out of attempts. Better luck next time. (the answer was {number_to_guess}.)")
+        exit()
+
     print(f"You have {count_attempts} attempts remaining to guess the number.")
     
     # Ask the player for a guess
     guess = input("Make a guess: ")
     
-elif difficulty == 'hard':
-    count_attempts = 5
-    print(f"You have {count_attempts} attempts remaining to guess the number.")
-    
-else:
-    exit()
-
+    # Check if guess is the correct number
+    if int(guess) == number_to_guess:
+        print(f"You got it! 🎉 The answer was {number_to_guess}")
+        break
+    elif int(guess) < number_to_guess:
+        print("Too low")
+        print("Guess again")
+        count_attempts -= 1
+    else: 
+        print("Too high")
+        print("Guess again")
+        count_attempts -= 1
