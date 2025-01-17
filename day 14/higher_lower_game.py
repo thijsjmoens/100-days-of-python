@@ -28,8 +28,8 @@ def pick_a_random_nummber(data=data):
     return random_number
 
 
-# Create a function for comparising A
-def comparising_a(data=data):
+# Create a function for comparising
+def comparising(data=data):
 
     # Get the data
     person = data[pick_a_random_nummber()]
@@ -37,15 +37,6 @@ def comparising_a(data=data):
     # Return the dict for later use
     return person
     
-    
-# Create a function for comparising B
-def comparising_b(data=data):
-
-    # Get the data
-    person = data[pick_a_random_nummber()]
-    
-    # Return the dict for later use
-    return person
     
 
 # Create a function to check Instagram followers
@@ -55,8 +46,14 @@ def check_instagram_followers(data=data):
     more_followers = ''
     
     # Get the comparising persons
-    follower_a = comparising_a()
-    follower_b = comparising_b()
+    follower_a = comparising()
+    follower_b = comparising()
+    
+    # First check if it is the same person
+    if follower_a == follower_b:
+        
+        # Pick a new one
+        follower_b = comparising()
     
     # Check who has more followers
     if follower_a['follower_count'] > follower_b['follower_count']:
@@ -92,7 +89,7 @@ while correct_answer:
     print(art.logo)
 
     # Show person A
-    person_a = comparising_a()
+    person_a = comparising()
     person_a_name =   person_a['name']
     person_a_description =   person_a['description']
     person_a_country =   person_a['country']
@@ -109,7 +106,7 @@ while correct_answer:
     print(art.vs)
 
     # Show person B
-    person_b = comparising_b()
+    person_b = comparising()
 
     person_b_name = person_b['name']
     person_b_description = person_b['description']
