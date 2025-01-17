@@ -70,9 +70,7 @@ def check_instagram_followers(data=data):
     return more_followers
         
         
-# ___ HERE BEGINS THE GAME ____        
-
-
+        
 # Create a variable for the score
 score = 0    
 
@@ -127,6 +125,8 @@ while correct_answer:
         # Add 1 point for a good answer.
         score += 1
         
+        # TODO: Store the right person for a follow up comparising
+        
     else:
         
         # Set variable to false
@@ -143,12 +143,3 @@ while correct_answer:
 
         # Exit game
         exit()
-        
-        
-        
-        
-# KNOW BUGS
-'''
-1. There can be 2 of the same persons
-2. The comparising is printed 2 times
-'''
