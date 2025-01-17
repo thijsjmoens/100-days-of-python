@@ -37,40 +37,10 @@ def comparising(data=data):
     # Return the dict for later use
     return person
     
-    
-
-# Create a function to check Instagram followers
-def check_instagram_followers(data=data):
-    
-    # Create a variable for output
-    more_followers = ''
-    
-    # Get the comparising persons
-    follower_a = comparising()
-    follower_b = comparising()
-    
-    # First check if it is the same person
-    if follower_a == follower_b:
-        
-        # Pick a new one
-        follower_b = comparising()
-    
-    # Check who has more followers
-    if follower_a['follower_count'] > follower_b['follower_count']:
-        
-        # Set variable to a
-        more_followers = 'A'
-        
-    else: 
-        
-        # Set variable to b
-        more_followers = 'B'
-        
-    # Return the check
-    return more_followers
-        
-        
-        
+   
+# Variable for holding the winner
+winner = {}
+     
 # Create a variable for the score
 score = 0    
 
@@ -80,17 +50,25 @@ correct_answer = True
 # Check if the answer is correct and keep brining comparisings
 while correct_answer:
     
+    # Create a variable for the winner
+    check_winner = ''
+    
     # Clear the screen
     os.system('cls||clear')   
 
     # Print the logo of the game
     print(art.logo)
 
-    # Show person A
-    person_a = comparising()
-    person_a_name =   person_a['name']
-    person_a_description =   person_a['description']
-    person_a_country =   person_a['country']
+    # Show person A, but show the previous winner if there is one
+    if winner:
+        person_a = winner
+        
+    else: 
+        person_a = comparising()
+        
+    person_a_name =  person_a['name']
+    person_a_description =  person_a['description']
+    person_a_country = person_a['country']
     
     # Print the person to the terminal
     print(f"Compare A: {person_a_name}, a {person_a_description}, from {person_a_country}")
@@ -105,6 +83,12 @@ while correct_answer:
 
     # Show person B
     person_b = comparising()
+    
+    # Check if person b is the same as A
+    if person_a == person_b:
+        
+        # Generate a new person
+        person_b = comparising()
 
     person_b_name = person_b['name']
     person_b_description = person_b['description']
@@ -116,8 +100,19 @@ while correct_answer:
     # Show the question who has more followers
     answer = input("Who has more followers? Type 'A' or 'B': ")
 
+    # Check who has more followers
+    if person_a['follower_count'] > person_b['follower_count']:
+        
+        winner = person_a
+        check_winner = 'A'
+        
+    else: 
+        
+        winner = person_b
+        check_winner = 'B'
+                
     # Check if the answer is correct
-    if answer == check_instagram_followers():
+    if answer == check_winner:
         
         # Set the variable to true
         correct_answer = True
@@ -126,6 +121,8 @@ while correct_answer:
         score += 1
         
         # TODO: Store the right person for a follow up comparising
+        # winner = check_instagram_followers()
+
         
     else:
         
