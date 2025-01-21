@@ -1,16 +1,25 @@
 from question_model import Question
 from data import question_data
+from quiz_brain import QuizBrain
 
+# Create an empty list for all the questions and answers
+question_bank = []
 
-
-for question, answer in question_data:
+# Iterate over the data
+for question in question_data:
     
-    question = Question(question["text"], answer["answer"])
+    # Assign dict to new variables
+    question_text = question['text']
+    question_answer = question['answer']
     
-    print(question)
+    # Instanciate object
+    question_and_answer = Question(question_text, question_answer)
+    
+    # Assign to the empty list
+    question_bank.append(question_and_answer)
+    
+    
+# Initiate a new quiz
+quiz = QuizBrain(question_bank)
 
-# Create a question bank with a list of questions and answers
-# question_bank = [
-#     Question("What is your name?", question_data.get("name")),
-#     Question("What is your age?", question_data.get("age")),
-# ]
+quiz.next_question()
