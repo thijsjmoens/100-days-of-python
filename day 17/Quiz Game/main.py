@@ -22,4 +22,7 @@ for question in question_data:
 # Initiate a new quiz
 quiz = QuizBrain(question_bank)
 
-quiz.next_question()
+# Show questions as long as there is one
+while quiz.still_has_questions():
+    
+    quiz.next_question()
