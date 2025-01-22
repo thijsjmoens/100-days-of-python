@@ -22,8 +22,8 @@ question_bank = []
 for question in question_data:
     
     # Assign dict to new variables
-    question_text = question['text']
-    question_answer = question['answer']
+    question_text = question['question']
+    question_answer = question['correct_answer']
     
     # Instanciate object
     question_and_answer = Question(question_text, question_answer)
