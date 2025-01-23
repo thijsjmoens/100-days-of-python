@@ -1,15 +1,27 @@
 from turtle import Turtle, Screen
 
-timmy_the_turtle = Turtle()
+# Create the object
+t = Turtle()
 
 # Change the shape
-timmy_the_turtle.shape("turtle")
+t.shape("turtle")
 
 # Change the color
-timmy_the_turtle.color("green")
+t.color("green")
 
-# Move it forward
-timmy_the_turtle.forward(45)
+# Draw a square
+# for _ in range(4):
+#     t.forward(100)
+#     t.right(90)
+
+
+# Draw a dashed line
+for _ in range(15):
+    t.forward(10)
+    t.penup()
+    t.forward(10)
+    t.pendown()
+
 
 
 
