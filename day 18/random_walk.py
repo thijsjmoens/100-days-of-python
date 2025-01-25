@@ -10,8 +10,38 @@
 
 # Import modules
 from turtle import Turtle, Screen
-from random import *
+from random import randint, choice
+
+# Create the object
+turtle = Turtle()
+
+# Variable for a list of colors
+colors = ['green', 'blue', 'yellow', 'red', 'brown', 'purple', 'SeaGreen']
+
+# List with directions
+directions = [0, 90, 180, 270]
+
+# Create the pensize
+turtle.pensize(15)
+
+# Accelerate more speed
+turtle.speed("fastest")
+
+# Create the random walk
+for _ in range(200):
+    turtle.color(choice(colors))
+    turtle.forward(30)
+    turtle.setheading(choice(directions))
 
 
 
 
+
+
+
+
+# Add it to the screen
+screen = Screen()
+
+# Exit the screen
+screen.exitonclick()
