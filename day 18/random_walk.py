@@ -10,7 +10,7 @@
 
 # Import modules
 from turtle import Turtle, Screen
-from random import randint, choice
+from random import choice
 
 # Create the object
 turtle = Turtle()
