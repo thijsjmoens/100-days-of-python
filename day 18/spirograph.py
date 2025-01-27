@@ -26,9 +26,12 @@ def random_color():
 tim.speed("fastest")
 
 # Create the spirograph
-for _ in range(200):
-    tim.color(random_color())
-    tim.circle(120, 360)
-    tim.left(10)
+def draw_spirograph(size_of_gap):
+    
+    for _ in range(int(360 / size_of_gap)):
+        tim.color(random_color())
+        tim.circle(100)
+        tim.setheading(tim.heading() + size_of_gap)
 
 
+draw_spirograph(5)
