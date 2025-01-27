@@ -12,6 +12,16 @@ import csv
 
 with open('weather_data.csv') as data_file:
     data = csv.reader(data_file)
+    temperatures = []
+    
+    # Skip the header
+    next(data_file)
     
     for row in data:
-        print(row)
+        # Get the temperatures
+        temperature = row[1]
+        
+        temperature = int(temperature)
+        temperatures.append(temperature)        
+
+print(temperatures)
