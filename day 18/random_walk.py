@@ -15,6 +15,7 @@ from random import randint, choice
 # Create the object
 turtle = Turtle()
 
+
 # Variable for a list of colors
 colors = ['green', 'blue', 'yellow', 'red', 'brown', 'purple', 'SeaGreen']
 
