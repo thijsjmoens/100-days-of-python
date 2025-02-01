@@ -17,8 +17,7 @@ turtle = Turtle()
 
 
 # Variable for a list of colors
-colors = ['green', 'blue', 'yellow', 'red', 'brown', 'purple', 'SeaGreen']
-
+colors = ['green', 'blue', 'yellow', 'red', 'brown', 'purple', '']
 # List with directions
 directions = [0, 90, 180, 270]
 
